@@ -25,6 +25,8 @@ jobs:
     - name: Build
       run: |
         npm install
+        npm uninstall -g babel
+        npm install --save-dev babel-cli
         npx babel
         npx webpack
         npm run lint:js
