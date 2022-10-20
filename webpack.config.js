@@ -20,9 +20,15 @@ const config = {
         filename: '[name].[contenthash].js',
     },
     module: {
-        rules: [
-            // @TODO js rule
-            // @TODO css rule
+        rules:[   //загрузчик для jsx
+            {
+                test: /\.js?$/, // определяем тип файлов
+                exclude: /(node_modules)/,  // исключаем из обработки папку node_modules
+                loader: "babel-loader",   // определяем загрузчик
+                options:{
+                    presets:[ "@babel/preset-react"]    // используемые плагины
+                }
+            }
         ],
     },
     // @TODO optimizations
