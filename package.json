@@ -11,7 +11,7 @@
         "react-redux": "^7.2.4",
         "react-router": "^5.2.0",
         "react-router-dom": "^5.2.0",
-        "react-scripts": "4.0.3",
+        "react-scripts": "^0.9.3",
         "redux": "^4.1.0",
         "redux-observable": "^2.0.0",
         "rxjs": "^7.1.0"
@@ -20,7 +20,7 @@
         "start": "npx webpack serve",
         "build": "npx webpack",
         "test": "echo \"implement me\"",
-        "lint:js": "npx eslint 'src/**'",
+        "lint:js": "npx eslint './src/**'",
         "lint:css": "npx stylelint '**/*.css'",
         "analyze": "webpack --html stats.html",
         "validate": "node_modules/.bin/statoscope validate -i stats.json --config=./statoscope.config.js",
@@ -34,9 +34,10 @@
         "@statoscope/stats-validator-plugin-webpack": "^5.24.0",
         "@statoscope/webpack-plugin": "^5.24.0",
         "babel-loader": "^8.2.5",
+        "css-loader": "^6.7.1",
         "html-webpack-plugin": "^5.5.0",
         "webpack": "^5.74.0",
         "webpack-cli": "^4.10.0",
-        "webpack-dev-server": "^3.11.1"
+        "webpack-dev-server": "^4.11.1"
     }
 }

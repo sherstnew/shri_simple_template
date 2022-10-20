@@ -10,7 +10,7 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin(),
         new StatoscopePlugin({
-            saveStatsTo: 'stats.json',
+            saveStatsTo: './stats.json',
             saveOnlyStats: false,
             open: false,
         }),
@@ -28,7 +28,11 @@ const config = {
                 options:{
                     presets:[ "@babel/preset-react"]    // используемые плагины
                 }
-            }
+            },
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
         ],
     },
     // @TODO optimizations
