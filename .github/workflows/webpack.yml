@@ -26,5 +26,4 @@ jobs:
       run: |
         npm install
         npx webpack
-        npm run lint:js
-        npm run lint:css
+
