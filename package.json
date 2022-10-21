@@ -26,7 +26,7 @@
         "start": "webpack serve",
         "build": "webpack",
         "test": "echo test не был назначен в тз",
-        "lint:js": "npx eslint src/**",
+        "lint:js": "npx eslint src/**/*.js",
         "lint:css": "npx stylelint **/*.css",
         "analyze": "webpack --json stats.json",
         "validate": "statoscope validate -i stats.json --config=./statoscope.config.js",
