@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const StatoscopePlugin = require('@statoscope/webpack-plugin').default;
 
 const config = {
@@ -32,6 +33,7 @@ const config = {
       saveOnlyStats: false,
       open: false,
     }),
+    new CleanWebpackPlugin(),
   ],
   output: {
     path: path.resolve(__dirname, './dist'),
