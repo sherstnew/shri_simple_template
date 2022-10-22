@@ -1,17 +1,17 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const StatoscopePlugin = require('@statoscope/webpack-plugin').default;
 
 const config = {
-  mode: 'production',
+  mode: 'development',
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, 'dist'),
     },
     compress: true,
     port: 9000,
   },
+  devtool: 'source-map',
   performance: {
     hints: false,
   },
@@ -22,22 +22,25 @@ const config = {
     },
   },
   entry: {
+    main: './public/index.html',
     about: './src/pages/About.js',
     home: './src/pages/Home.js',
   },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
     new StatoscopePlugin({
       saveReportTo: './report.html',
       saveStatsTo: './stats.json',
       saveOnlyStats: false,
       open: false,
     }),
-    new CleanWebpackPlugin(),
   ],
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].[contenthash].js',
+    clean: true,
   },
   module: {
     rules: [ // загрузчик для jsx
@@ -53,6 +56,7 @@ const config = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      { test: /\.(html)$/, use: ['html-loader'] },
     ],
   },
   // @TODO optimizations
