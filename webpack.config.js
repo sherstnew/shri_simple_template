@@ -22,9 +22,9 @@ const config = {
     },
   },
   entry: {
-    main: './public/index.html',
-    about: './src/pages/About.js',
-    home: './src/pages/Home.js',
+    main: './src/index.js',
+    // about: './src/pages/About.js',
+    // home: './src/pages/Home.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -41,15 +41,21 @@ const config = {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].[contenthash].js',
     clean: true,
+    library: {
+      name: 'UUID',
+      type: 'var',
+    },
   },
   module: {
     rules: [ // загрузчик для jsx
       {
-        test: /\.js?$/, // определяем тип файлов
-        exclude: /(node_modules)/, // исключаем из обработки папку node_modules
-        loader: 'babel-loader', // определяем загрузчик
+        test: /\.js?$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-react'], // используемые плагины
+          presets: [
+            ['@babel/preset-react', { runtime: 'automatic' }],
+          ],
         },
       },
       {

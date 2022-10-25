@@ -6,6 +6,7 @@
   "dependencies": {
     "assert": "^2.0.0",
     "buffer": "^6.0.3",
+    "crypto": "^1.0.1",
     "crypto-browserify": "^3.12.0",
     "eslint-config-airbnb": "^19.0.4",
     "html-loader": "^4.2.0",
@@ -21,7 +22,8 @@
     "redux-observable": "^2.0.0",
     "rxjs": "^7.1.0",
     "stream": "^0.0.2",
-    "stylelint-config-standard": "^29.0.0"
+    "stylelint-config-standard": "^29.0.0",
+    "uuid": "^9.0.0"
   },
   "scripts": {
     "start": "webpack serve",

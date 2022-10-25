@@ -15,7 +15,7 @@ export function TodoItem(props) {
   const onChange = useCallback(() => dispatch(setDone(index, !done)), [index, done, dispatch]);
 
   return (
-    <div data-testid={UUID()} className={styles.item}>
+    <div data-testid={UUID} className={styles.item}>
       <div data-testid="list-item" className={done ? 'done' : ''}>
         <input type="checkbox" checked={done} onChange={onChange} />
         {text}
