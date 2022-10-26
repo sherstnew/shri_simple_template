@@ -23,8 +23,6 @@ const config = {
   },
   entry: {
     main: './src/index.js',
-    // about: './src/pages/About.js',
-    // home: './src/pages/Home.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
