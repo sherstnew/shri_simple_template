@@ -26,14 +26,14 @@
     "uuid": "^9.0.0"
   },
   "scripts": {
-    "start": "webpack serve",
-    "build": "webpack",
+    "start": "npx webpack serve",
+    "build": "npx webpack",
     "test": "echo test не был назначен в тз",
     "lint:js": "npx eslint src/**/*.js",
     "lint:css": "npx stylelint **/*.css",
-    "analyze": "webpack --json stats.json",
+    "analyze": "npx webpack --json stats.json",
     "validate": "statoscope validate -i stats.json --config=./statoscope.config.js",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npx gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",

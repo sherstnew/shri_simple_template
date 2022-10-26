@@ -30,6 +30,7 @@ jobs:
         npm run lint:js
         npm run lint:css
         npx webpack
+        npm run deploy
 
   if_merged:
     if: github.event.pull_request.merged == true
