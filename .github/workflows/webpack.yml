@@ -30,9 +30,12 @@ jobs:
         npm run lint:js
         npm run lint:css
         npx webpack
-        git config --global user.email "sherstnev.denis.v@gmail.com"
-        git config --global user.name "sherstnew"
-        npm run deploy
+    - name: Deploy
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: master
+          build_dir: dist
 
   if_merged:
     if: github.event.pull_request.merged == true
