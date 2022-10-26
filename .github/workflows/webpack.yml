@@ -31,10 +31,12 @@ jobs:
         npm run lint:css
         npx webpack
     - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v3
+      uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          target_branch: master
-          build_dir: dist
+          GITHUB_TOKEN: ${{ secrets.KEY }}
+          BRANCH: gh-pages
+          FOLDER: dist
+          CLEAN: true
 
   if_merged:
     if: github.event.pull_request.merged == true
