@@ -30,6 +30,8 @@ jobs:
         npm run lint:js
         npm run lint:css
         npx webpack
+        git config --global user.email "sherstnev.denis.v@gmail.com"
+        git config --global user.name "sherstnew"
         npm run deploy
 
   if_merged:
