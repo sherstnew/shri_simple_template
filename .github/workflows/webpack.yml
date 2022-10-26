@@ -32,11 +32,11 @@ jobs:
         npx webpack
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.KEY }}
-          BRANCH: gh-pages
-          FOLDER: dist
-          CLEAN: true
+      with:
+        GITHUB_TOKEN: ${{ secrets.KEY }}
+        BRANCH: gh-pages
+        FOLDER: dist
+        CLEAN: true
 
   if_merged:
     if: github.event.pull_request.merged == true
