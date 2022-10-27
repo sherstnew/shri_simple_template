@@ -31,7 +31,7 @@ jobs:
         npm run lint:js
         npm run lint:css
         npm run build
-        npm run validate
+        # npm run validate
     - name: Deploy with gh-pages
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
