@@ -19,4 +19,3 @@
    - при влитии PR в основную ветку публикуйте текущую версию приложения в GitHub Pages
 
    В качестве платформы CI используйте [GitHub Actions](https://docs.github.com/en/actions).
-
