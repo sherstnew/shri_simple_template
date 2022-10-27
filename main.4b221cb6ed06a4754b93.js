@@ -337,7 +337,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".EPk3EXERT5xyM_B8zf0P {\n  padding: 0;\n}\n", "",{"version":3,"sources":["webpack://./src/components/index.module.css"],"names":[],"mappings":"AAAA;EACE,UAAU;AACZ","sourcesContent":[".item {\n  padding: 0;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".EPk3EXERT5xyM_B8zf0P {\r\n  padding: 0;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/components/index.module.css"],"names":[],"mappings":"AAAA;EACE,UAAU;AACZ","sourcesContent":[".item {\r\n  padding: 0;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"item": "EPk3EXERT5xyM_B8zf0P"
@@ -364,7 +364,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  padding: 20px;\n}\n\ninput,\na {\n  margin-right: 8px;\n}\n\n.done {\n  text-decoration: line-through;\n}\n\n.list {\n  margin-top: 12px;\n}\n", "",{"version":3,"sources":["webpack://./src/index.css"],"names":[],"mappings":"AAAA;EACE,aAAa;AACf;;AAEA;;EAEE,iBAAiB;AACnB;;AAEA;EACE,6BAA6B;AAC/B;;AAEA;EACE,gBAAgB;AAClB","sourcesContent":["body {\n  padding: 20px;\n}\n\ninput,\na {\n  margin-right: 8px;\n}\n\n.done {\n  text-decoration: line-through;\n}\n\n.list {\n  margin-top: 12px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  padding: 20px;\r\n}\r\n\r\ninput,\r\na {\r\n  margin-right: 8px;\r\n}\r\n\r\n.done {\r\n  text-decoration: line-through;\r\n}\r\n\r\n.list {\r\n  margin-top: 12px;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/index.css"],"names":[],"mappings":"AAAA;EACE,aAAa;AACf;;AAEA;;EAEE,iBAAiB;AACnB;;AAEA;EACE,6BAA6B;AAC/B;;AAEA;EACE,gBAAgB;AAClB","sourcesContent":["body {\r\n  padding: 20px;\r\n}\r\n\r\ninput,\r\na {\r\n  margin-right: 8px;\r\n}\r\n\r\n.done {\r\n  text-decoration: line-through;\r\n}\r\n\r\n.list {\r\n  margin-top: 12px;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -57229,4 +57229,4 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime
 UUID = __webpack_exports__;
 /******/ })()
 ;
-//# sourceMappingURL=main.43b8dba72078273ed9fb.js.map
+//# sourceMappingURL=main.4b221cb6ed06a4754b93.js.map
