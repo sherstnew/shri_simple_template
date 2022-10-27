@@ -1,61 +1,40 @@
-name: NodeJS with Webpack
+name: Node.js CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - 'master'
   pull_request:
-    branches: [ "master" ]
-    types: [opened, reopened, closed]
-
-permissions: write-all
+    branches:
+      - 'master'
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v3
-      with:
-        persist-credentials: false
-        fetch-depth: 0
-
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-
-    - name: Build
+        cache: 'npm'
+    - run: npm ci
+    - name: npm linters, build and deploy
       run: |
-        npm install
-        npx babel
         npm run lint:js
         npm run lint:css
-        npx webpack
-
-  if_merged:
-    if: github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@3.7.1
-      with:
-        GITHUB_TOKEN: ${{ secrets.KEY }}
-        BRANCH: gh-pages
-        FOLDER: dist
-        CLEAN: true
-
+        npm run build
+        npm run validate
+    - name: Deploy with gh-pages
+      run: |
+        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
