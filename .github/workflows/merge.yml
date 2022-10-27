@@ -8,7 +8,7 @@ on:
     branches:
       - 'master'
     types:
-      - opened
+      - closed
 
 jobs:
   build:
@@ -27,12 +27,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - name: Linters and Build
-      run: |
-        npm run lint:js
-        npm run lint:css
-        npm run build
-        # npm run validate
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Deploy
+          run: |
+            git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+            npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
