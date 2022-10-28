@@ -25,5 +25,6 @@ module.exports = {
     'default-param-last': 'off',
     'react/prop-types': 'off',
     'no-shadow': 'off',
+    'linebreak-style': ['error', 'windows'],
   },
 };
